@@ -11,7 +11,7 @@ sudo apt install ccrypt
 ```
 ccrypt [name]
 ```
-
+Расшифруйте файл:
 ```
 ccrypt -d [name].cpt
 ```
