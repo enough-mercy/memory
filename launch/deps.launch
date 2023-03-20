@@ -1,0 +1,16 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="fake_move_base" default="false"/>
+
+  <!-- Run Aruco service -->
+  <node pkg="turtlebro_aruco" type="aruco_service.py" name="aruco_service" output="screen" required="true" />
+
+  <!-- Run Speech service -->
+  <include file="$(find turtlebro_speech)/launch/speech_service.launch"/>
+  
+  <!-- Run Navigation for Patroll -->
+  <include file="$(find turtlebro_patrol)/launch/navigation_slam.launch">
+      <arg name="fake_move_base" value="$(arg fake_move_base)"/>
+  </include>
+ 
+</launch>
